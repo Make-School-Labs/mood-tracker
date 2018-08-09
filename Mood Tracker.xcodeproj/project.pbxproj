@@ -12,6 +12,8 @@
 		E989CF75211CB7530061C2C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E989CF73211CB7530061C2C6 /* Main.storyboard */; };
 		E989CF77211CB7580061C2C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E989CF76211CB7580061C2C6 /* Assets.xcassets */; };
 		E989CF7A211CB7580061C2C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E989CF78211CB7580061C2C6 /* LaunchScreen.storyboard */; };
+		E989CF82211CBA650061C2C6 /* MoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E989CF81211CBA650061C2C6 /* MoodTableViewCell.swift */; };
+		E989CF84211CC19C0061C2C6 /* MoodDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E989CF83211CC19C0061C2C6 /* MoodDetailedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		E989CF76211CB7580061C2C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E989CF79211CB7580061C2C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E989CF7B211CB7580061C2C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E989CF81211CBA650061C2C6 /* MoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTableViewCell.swift; sourceTree = "<group>"; };
+		E989CF83211CC19C0061C2C6 /* MoodDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodDetailedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				E989CF76211CB7580061C2C6 /* Assets.xcassets */,
 				E989CF78211CB7580061C2C6 /* LaunchScreen.storyboard */,
 				E989CF7B211CB7580061C2C6 /* Info.plist */,
+				E989CF81211CBA650061C2C6 /* MoodTableViewCell.swift */,
+				E989CF83211CC19C0061C2C6 /* MoodDetailedViewController.swift */,
 			);
 			path = "Mood Tracker";
 			sourceTree = "<group>";
@@ -135,7 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E989CF82211CBA650061C2C6 /* MoodTableViewCell.swift in Sources */,
 				E989CF72211CB7530061C2C6 /* ViewController.swift in Sources */,
+				E989CF84211CC19C0061C2C6 /* MoodDetailedViewController.swift in Sources */,
 				E989CF70211CB7530061C2C6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
