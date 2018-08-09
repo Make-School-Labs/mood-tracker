@@ -14,6 +14,9 @@
 		E989CF7A211CB7580061C2C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E989CF78211CB7580061C2C6 /* LaunchScreen.storyboard */; };
 		E989CF82211CBA650061C2C6 /* MoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E989CF81211CBA650061C2C6 /* MoodTableViewCell.swift */; };
 		E989CF84211CC19C0061C2C6 /* MoodDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E989CF83211CC19C0061C2C6 /* MoodDetailedViewController.swift */; };
+		E989CF86211CC4080061C2C6 /* MoodEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E989CF85211CC4080061C2C6 /* MoodEntry.swift */; };
+		E989CF88211CC5920061C2C6 /* MoodEntryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E989CF87211CC5920061C2C6 /* MoodEntryService.swift */; };
+		E989CF8A211CC7FA0061C2C6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E989CF89211CC7FA0061C2C6 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		E989CF7B211CB7580061C2C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E989CF81211CBA650061C2C6 /* MoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTableViewCell.swift; sourceTree = "<group>"; };
 		E989CF83211CC19C0061C2C6 /* MoodDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodDetailedViewController.swift; sourceTree = "<group>"; };
+		E989CF85211CC4080061C2C6 /* MoodEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntry.swift; sourceTree = "<group>"; };
+		E989CF87211CC5920061C2C6 /* MoodEntryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntryService.swift; sourceTree = "<group>"; };
+		E989CF89211CC7FA0061C2C6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,9 @@
 				E989CF7B211CB7580061C2C6 /* Info.plist */,
 				E989CF81211CBA650061C2C6 /* MoodTableViewCell.swift */,
 				E989CF83211CC19C0061C2C6 /* MoodDetailedViewController.swift */,
+				E989CF85211CC4080061C2C6 /* MoodEntry.swift */,
+				E989CF87211CC5920061C2C6 /* MoodEntryService.swift */,
+				E989CF89211CC7FA0061C2C6 /* Constants.swift */,
 			);
 			path = "Mood Tracker";
 			sourceTree = "<group>";
@@ -142,7 +151,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E989CF82211CBA650061C2C6 /* MoodTableViewCell.swift in Sources */,
+				E989CF88211CC5920061C2C6 /* MoodEntryService.swift in Sources */,
 				E989CF72211CB7530061C2C6 /* ViewController.swift in Sources */,
+				E989CF86211CC4080061C2C6 /* MoodEntry.swift in Sources */,
+				E989CF8A211CC7FA0061C2C6 /* Constants.swift in Sources */,
 				E989CF84211CC19C0061C2C6 /* MoodDetailedViewController.swift in Sources */,
 				E989CF70211CB7530061C2C6 /* AppDelegate.swift in Sources */,
 			);
