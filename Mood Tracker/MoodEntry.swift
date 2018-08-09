@@ -13,6 +13,7 @@ struct MoodEntry {
     
     //NOTE: should this be nested in MoodEntry?
     enum Mood: Int {
+        case none
         case amazing
         case good
         case neutral
@@ -22,6 +23,8 @@ struct MoodEntry {
         //NOTE: could use functions that return String
         var stringValue: String {
             switch self {
+            case .none:
+                return ""
             case .amazing:
                 return "Amazing"
             case .good:
@@ -38,16 +41,18 @@ struct MoodEntry {
         //NOTE: could use functions that return UIColor
         var colorValue: UIColor {
             switch self {
+            case .none:
+                return .clear
             case .amazing:
-                return UIColor.green
+                return .green
             case .good:
-                return UIColor.blue
+                return .blue
             case .neutral:
-                return UIColor.gray
+                return .gray
             case .bad:
-                return UIColor.orange
+                return .orange
             case .terrible:
-                return UIColor.red
+                return .red
             }
         }
     }

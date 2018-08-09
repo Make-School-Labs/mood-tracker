@@ -10,7 +10,7 @@ import Foundation
 
 struct MoodEntryService {
     
-    private var entries: [MoodEntry] = []
+    private(set) var entries: [MoodEntry] = []
     
     mutating func createEntry(mood: MoodEntry.Mood, date: Date) {
         let newEntry = MoodEntry(mood: mood, date: date)

@@ -72,6 +72,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="IIU-Xg-lxp"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="JUl-xp-DRb"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -86,10 +90,14 @@
                     <navigationItem key="navigationItem" title="Your Moods" id="wsH-zZ-Nd2">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="enP-Eh-7jo">
                             <connections>
+                                <action selector="pressAddEntry:" destination="BYZ-38-t0r" id="c6O-Pr-MtQ"/>
                                 <segue destination="Sev-cb-bGB" kind="showDetail" identifier="show new mood" id="aJD-bm-b17"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="hz1-rq-Yl4" id="4lo-mg-UfZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -104,7 +112,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="euB-99-swh">
-                                <rect key="frame" x="16" y="80" width="343" height="555"/>
+                                <rect key="frame" x="16" y="36" width="343" height="599"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mood" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1i-PZ-jGT">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="28"/>
@@ -113,10 +121,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OGD-R2-IyN">
-                                        <rect key="frame" x="0.0" y="36" width="343" height="219.5"/>
+                                        <rect key="frame" x="0.0" y="36" width="343" height="241.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYH-lV-UJc">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="37.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Amazing">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -126,7 +134,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j62-7Y-RkW">
-                                                <rect key="frame" x="0.0" y="45.5" width="343" height="37.5"/>
+                                                <rect key="frame" x="0.0" y="50" width="343" height="42"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Good">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -136,7 +144,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wuv-Lt-yIn">
-                                                <rect key="frame" x="0.0" y="91" width="343" height="37.5"/>
+                                                <rect key="frame" x="0.0" y="100" width="343" height="41.5"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Neutral">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -146,7 +154,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FkF-GD-ysa">
-                                                <rect key="frame" x="0.0" y="136.5" width="343" height="37.5"/>
+                                                <rect key="frame" x="0.0" y="149.5" width="343" height="42"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Bad">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -156,7 +164,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UdP-37-b90">
-                                                <rect key="frame" x="0.0" y="182" width="343" height="37.5"/>
+                                                <rect key="frame" x="0.0" y="199.5" width="343" height="42"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Terrible">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -168,13 +176,13 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKn-4F-KlQ">
-                                        <rect key="frame" x="0.0" y="263.5" width="343" height="28"/>
+                                        <rect key="frame" x="0.0" y="285.5" width="343" height="28"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Lv4-f7-oVK">
-                                        <rect key="frame" x="0.0" y="299.5" width="343" height="255.5"/>
+                                        <rect key="frame" x="0.0" y="321.5" width="343" height="277.5"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Aze-WX-RJh">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="29"/>
@@ -188,7 +196,7 @@
                                                 </connections>
                                             </segmentedControl>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="YuG-89-NOb">
-                                                <rect key="frame" x="0.0" y="36" width="343" height="219.5"/>
+                                                <rect key="frame" x="0.0" y="36" width="343" height="241.5"/>
                                                 <date key="date" timeIntervalSinceReferenceDate="555532213.82774103">
                                                     <!--2018-08-09 18:30:13 +0000-->
                                                 </date>
@@ -249,6 +257,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1km-zX-HeI"/>
+        <segue reference="aJD-bm-b17"/>
     </inferredMetricsTieBreakers>
 </document>
