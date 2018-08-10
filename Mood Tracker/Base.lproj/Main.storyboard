@@ -68,7 +68,7 @@
                                             <outlet property="imageViewMoodColor" destination="8RW-H9-0BJ" id="Pnf-Zs-UT1"/>
                                             <outlet property="labelMoodDate" destination="tem-gX-frn" id="xB5-H6-qyH"/>
                                             <outlet property="labelMoodTitle" destination="TEr-KW-ZMX" id="q3K-n0-Q76"/>
-                                            <segue destination="Sev-cb-bGB" kind="show" identifier="show mood details" id="1km-zX-HeI"/>
+                                            <segue destination="Sev-cb-bGB" kind="show" identifier="show entry details" id="1km-zX-HeI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -91,7 +91,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="enP-Eh-7jo">
                             <connections>
                                 <action selector="pressAddEntry:" destination="BYZ-38-t0r" id="c6O-Pr-MtQ"/>
-                                <segue destination="Sev-cb-bGB" kind="showDetail" identifier="show new mood" id="aJD-bm-b17"/>
+                                <segue destination="Sev-cb-bGB" kind="show" identifier="show new entry" id="aJD-bm-b17"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -103,7 +103,7 @@
             </objects>
             <point key="canvasLocation" x="1055.2" y="100.29985007496252"/>
         </scene>
-        <!--Mood Detailed View Controller-->
+        <!--Details-->
         <scene sceneID="dUb-KY-Cn7">
             <objects>
                 <viewController id="Sev-cb-bGB" customClass="MoodDetailedViewController" customModule="Mood_Tracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -112,63 +112,53 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="euB-99-swh">
-                                <rect key="frame" x="16" y="36" width="343" height="599"/>
+                                <rect key="frame" x="16" y="80" width="343" height="555"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mood" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1i-PZ-jGT">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="28"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OGD-R2-IyN">
-                                        <rect key="frame" x="0.0" y="36" width="343" height="241.5"/>
+                                        <rect key="frame" x="0.0" y="28.5" width="343" height="245"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYH-lV-UJc">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="42.5"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Amazing">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
+                                                <state key="normal" title="Amazing"/>
                                                 <connections>
                                                     <action selector="pressMood:" destination="Sev-cb-bGB" eventType="touchUpInside" id="ZKK-D7-erd"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j62-7Y-RkW">
-                                                <rect key="frame" x="0.0" y="50" width="343" height="42"/>
+                                                <rect key="frame" x="0.0" y="50.5" width="343" height="42.5"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Good">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
+                                                <state key="normal" title="Good"/>
                                                 <connections>
                                                     <action selector="pressMood:" destination="Sev-cb-bGB" eventType="touchUpInside" id="aoq-zl-SHa"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wuv-Lt-yIn">
-                                                <rect key="frame" x="0.0" y="100" width="343" height="41.5"/>
+                                                <rect key="frame" x="0.0" y="101" width="343" height="43"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Neutral">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
+                                                <state key="normal" title="Neutral"/>
                                                 <connections>
                                                     <action selector="pressMood:" destination="Sev-cb-bGB" eventType="touchUpInside" id="4B4-su-n8j"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FkF-GD-ysa">
-                                                <rect key="frame" x="0.0" y="149.5" width="343" height="42"/>
+                                                <rect key="frame" x="0.0" y="152" width="343" height="42.5"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Bad">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
+                                                <state key="normal" title="Bad"/>
                                                 <connections>
                                                     <action selector="pressMood:" destination="Sev-cb-bGB" eventType="touchUpInside" id="bBV-cq-1Ky"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UdP-37-b90">
-                                                <rect key="frame" x="0.0" y="199.5" width="343" height="42"/>
+                                                <rect key="frame" x="0.0" y="202.5" width="343" height="42.5"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Terrible">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
+                                                <state key="normal" title="Terrible"/>
                                                 <connections>
                                                     <action selector="pressMood:" destination="Sev-cb-bGB" eventType="touchUpInside" id="Nq5-3h-yYV"/>
                                                 </connections>
@@ -176,27 +166,16 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKn-4F-KlQ">
-                                        <rect key="frame" x="0.0" y="285.5" width="343" height="28"/>
+                                        <rect key="frame" x="0.0" y="281.5" width="343" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Lv4-f7-oVK">
-                                        <rect key="frame" x="0.0" y="321.5" width="343" height="277.5"/>
+                                        <rect key="frame" x="0.0" y="310" width="343" height="245"/>
                                         <subviews>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Aze-WX-RJh">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="29"/>
-                                                <segments>
-                                                    <segment title="Today"/>
-                                                    <segment title="Yesterday"/>
-                                                    <segment title="Other"/>
-                                                </segments>
-                                                <connections>
-                                                    <action selector="segmentDidChangeValue:" destination="Sev-cb-bGB" eventType="valueChanged" id="TKV-kS-KGL"/>
-                                                </connections>
-                                            </segmentedControl>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="YuG-89-NOb">
-                                                <rect key="frame" x="0.0" y="36" width="343" height="241.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="245"/>
                                                 <date key="date" timeIntervalSinceReferenceDate="555532213.82774103">
                                                     <!--2018-08-09 18:30:13 +0000-->
                                                 </date>
@@ -208,7 +187,6 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Aze-WX-RJh" firstAttribute="height" secondItem="FKn-4F-KlQ" secondAttribute="height" id="AW0-7J-vTD"/>
                                     <constraint firstItem="FKn-4F-KlQ" firstAttribute="height" secondItem="o1i-PZ-jGT" secondAttribute="height" id="h3X-KQ-iDR"/>
                                     <constraint firstItem="YuG-89-NOb" firstAttribute="height" secondItem="OGD-R2-IyN" secondAttribute="height" id="wo0-Ah-7iy"/>
                                 </constraints>
@@ -223,6 +201,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Whb-kn-e4g"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Details" id="BmR-1X-RqQ">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="PgF-H1-OFD">
+                            <connections>
+                                <action selector="pressCancel:" destination="Sev-cb-bGB" id="zuw-a8-ySm"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="FdL-7k-gCy">
+                            <connections>
+                                <action selector="pressSave:" destination="Sev-cb-bGB" id="gw8-Ki-iq9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="buttonAmazingMood" destination="fYH-lV-UJc" id="beh-XB-lZc"/>
                         <outlet property="buttonBadMood" destination="FkF-GD-ysa" id="Uzb-Zh-lL9"/>
@@ -230,10 +220,11 @@
                         <outlet property="buttonNeutralMood" destination="Wuv-Lt-yIn" id="qY4-qX-ZeE"/>
                         <outlet property="buttonTerribleMood" destination="UdP-37-b90" id="fDL-5Q-ysX"/>
                         <outlet property="datePicker" destination="YuG-89-NOb" id="xYk-ac-QcN"/>
-                        <outlet property="segmentDate" destination="Aze-WX-RJh" id="ljR-wb-mCk"/>
+                        <segue destination="KwD-73-Oo1" kind="unwind" identifier="unwind to home" unwindAction="unwindToHome:" id="cmC-cC-QhV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPv-ab-Wov" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="KwD-73-Oo1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1808.8" y="97.601199400299862"/>
         </scene>
@@ -257,6 +248,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aJD-bm-b17"/>
+        <segue reference="1km-zX-HeI"/>
     </inferredMetricsTieBreakers>
 </document>

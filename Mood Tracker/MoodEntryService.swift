@@ -32,6 +32,7 @@ struct MoodEntryService {
             }
             
             entries = entriesFromData
+            sortEntries()
         }
     }
     
@@ -48,7 +49,7 @@ struct MoodEntryService {
     
     private mutating func sortEntries() {
         entries.sort { (aEntry, bEntry) -> Bool in
-            return aEntry.date.compare(bEntry.date) == .orderedAscending
+            return aEntry.date.compare(bEntry.date) == .orderedDescending
         }
     }
     
