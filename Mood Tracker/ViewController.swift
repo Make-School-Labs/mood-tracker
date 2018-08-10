@@ -75,6 +75,14 @@ class ViewController: UIViewController {
         
         moodService.loadEntries()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let previouslySelectedRow = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: previouslySelectedRow, animated: true)
+        }
+    }
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {

@@ -52,46 +52,51 @@ class MoodDetailedViewController: UIViewController {
     }
     
     private func updateMood(to newMood: MoodEntry.Mood) {
+        let unselectedColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         switch newMood {
         case .none:
-            buttonAmazingMood.backgroundColor = nil
-            buttonGoodMood.backgroundColor = nil
-            buttonNeutralMood.backgroundColor = nil
-            buttonBadMood.backgroundColor = nil
-            buttonTerribleMood.backgroundColor = nil
+            buttonAmazingMood.backgroundColor = unselectedColor
+            buttonGoodMood.backgroundColor = unselectedColor
+            buttonNeutralMood.backgroundColor = unselectedColor
+            buttonBadMood.backgroundColor = unselectedColor
+            buttonTerribleMood.backgroundColor = unselectedColor
         case .amazing:
             buttonAmazingMood.backgroundColor = newMood.colorValue
-            buttonGoodMood.backgroundColor = nil
-            buttonNeutralMood.backgroundColor = nil
-            buttonBadMood.backgroundColor = nil
-            buttonTerribleMood.backgroundColor = nil
+            buttonGoodMood.backgroundColor = unselectedColor
+            buttonNeutralMood.backgroundColor = unselectedColor
+            buttonBadMood.backgroundColor = unselectedColor
+            buttonTerribleMood.backgroundColor = unselectedColor
         case .good:
-            buttonAmazingMood.backgroundColor = nil
+            buttonAmazingMood.backgroundColor = unselectedColor
             buttonGoodMood.backgroundColor = newMood.colorValue
-            buttonNeutralMood.backgroundColor = nil
-            buttonBadMood.backgroundColor = nil
-            buttonTerribleMood.backgroundColor = nil
+            buttonNeutralMood.backgroundColor = unselectedColor
+            buttonBadMood.backgroundColor = unselectedColor
+            buttonTerribleMood.backgroundColor = unselectedColor
         case .neutral:
-            buttonAmazingMood.backgroundColor = nil
-            buttonGoodMood.backgroundColor = nil
+            buttonAmazingMood.backgroundColor = unselectedColor
+            buttonGoodMood.backgroundColor = unselectedColor
             buttonNeutralMood.backgroundColor = newMood.colorValue
-            buttonBadMood.backgroundColor = nil
-            buttonTerribleMood.backgroundColor = nil
+            buttonBadMood.backgroundColor = unselectedColor
+            buttonTerribleMood.backgroundColor = unselectedColor
         case .bad:
-            buttonAmazingMood.backgroundColor = nil
-            buttonGoodMood.backgroundColor = nil
-            buttonNeutralMood.backgroundColor = nil
+            buttonAmazingMood.backgroundColor = unselectedColor
+            buttonGoodMood.backgroundColor = unselectedColor
+            buttonNeutralMood.backgroundColor = unselectedColor
             buttonBadMood.backgroundColor = newMood.colorValue
-            buttonTerribleMood.backgroundColor = nil
+            buttonTerribleMood.backgroundColor = unselectedColor
         case .terrible:
-            buttonAmazingMood.backgroundColor = nil
-            buttonGoodMood.backgroundColor = nil
-            buttonNeutralMood.backgroundColor = nil
-            buttonBadMood.backgroundColor = nil
+            buttonAmazingMood.backgroundColor = unselectedColor
+            buttonGoodMood.backgroundColor = unselectedColor
+            buttonNeutralMood.backgroundColor = unselectedColor
+            buttonBadMood.backgroundColor = unselectedColor
             buttonTerribleMood.backgroundColor = newMood.colorValue
         }
         
         mood = newMood
+    }
+    
+    private func applyButtonStyle(to button: UIButton) {
+        button.layer.cornerRadius = 4.0
     }
     
     // MARK: - IBACTIONS (REMOVE THIS COMMENT BEFORE PUBLISHING)
@@ -104,11 +109,31 @@ class MoodDetailedViewController: UIViewController {
         performSegue(withIdentifier: "unwind to home", sender: false)
     }
     
-    @IBOutlet weak var buttonAmazingMood: UIButton!
-    @IBOutlet weak var buttonGoodMood: UIButton!
-    @IBOutlet weak var buttonNeutralMood: UIButton!
-    @IBOutlet weak var buttonBadMood: UIButton!
-    @IBOutlet weak var buttonTerribleMood: UIButton!
+    @IBOutlet weak var buttonAmazingMood: UIButton! {
+        didSet {
+            applyButtonStyle(to: buttonAmazingMood)
+        }
+    }
+    @IBOutlet weak var buttonGoodMood: UIButton! {
+        didSet {
+            applyButtonStyle(to: buttonGoodMood)
+        }
+    }
+    @IBOutlet weak var buttonNeutralMood: UIButton! {
+        didSet {
+            applyButtonStyle(to: buttonNeutralMood)
+        }
+    }
+    @IBOutlet weak var buttonBadMood: UIButton! {
+        didSet {
+            applyButtonStyle(to: buttonBadMood)
+        }
+    }
+    @IBOutlet weak var buttonTerribleMood: UIButton! {
+        didSet {
+            applyButtonStyle(to: buttonTerribleMood)
+        }
+    }
     @IBAction func pressMood(_ button: UIButton) {
         switch button.tag {
         case 0:

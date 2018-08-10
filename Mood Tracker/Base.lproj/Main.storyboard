@@ -23,31 +23,31 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mood cell" rowHeight="64" id="AA2-3S-vXX" customClass="MoodTableViewCell" customModule="Mood_Tracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="64"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mood cell" rowHeight="72" id="AA2-3S-vXX" customClass="MoodTableViewCell" customModule="Mood_Tracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AA2-3S-vXX" id="6Ai-JB-Ifj">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="63.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="71.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8RW-H9-0BJ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="12" height="63.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="12" height="71.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="12" id="tVu-Ho-rhz"/>
                                                     </constraints>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q92-9X-uqc">
-                                                    <rect key="frame" x="20" y="11" width="314" height="42"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Q92-9X-uqc">
+                                                    <rect key="frame" x="20" y="11" width="314" height="50"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEr-KW-ZMX">
-                                                            <rect key="frame" x="0.0" y="0.0" width="42" height="42"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEr-KW-ZMX">
+                                                            <rect key="frame" x="0.0" y="0.0" width="314" height="30"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tem-gX-frn">
-                                                            <rect key="frame" x="42" y="0.0" width="272" height="42"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tem-gX-frn">
+                                                            <rect key="frame" x="0.0" y="34" width="314" height="16"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -115,50 +115,65 @@
                                 <rect key="frame" x="16" y="80" width="343" height="555"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mood" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1i-PZ-jGT">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="24"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OGD-R2-IyN">
-                                        <rect key="frame" x="0.0" y="28.5" width="343" height="245"/>
+                                        <rect key="frame" x="0.0" y="32" width="343" height="241.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYH-lV-UJc">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="42.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Amazing"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <state key="normal" title="Amazing">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="pressMood:" destination="Sev-cb-bGB" eventType="touchUpInside" id="ZKK-D7-erd"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j62-7Y-RkW">
-                                                <rect key="frame" x="0.0" y="50.5" width="343" height="42.5"/>
+                                                <rect key="frame" x="0.0" y="50" width="343" height="42"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Good"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <state key="normal" title="Good">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="pressMood:" destination="Sev-cb-bGB" eventType="touchUpInside" id="aoq-zl-SHa"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wuv-Lt-yIn">
-                                                <rect key="frame" x="0.0" y="101" width="343" height="43"/>
+                                                <rect key="frame" x="0.0" y="100" width="343" height="41.5"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Neutral"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <state key="normal" title="Neutral">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="pressMood:" destination="Sev-cb-bGB" eventType="touchUpInside" id="4B4-su-n8j"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FkF-GD-ysa">
-                                                <rect key="frame" x="0.0" y="152" width="343" height="42.5"/>
+                                                <rect key="frame" x="0.0" y="149.5" width="343" height="42"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Bad"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <state key="normal" title="Bad">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="pressMood:" destination="Sev-cb-bGB" eventType="touchUpInside" id="bBV-cq-1Ky"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UdP-37-b90">
-                                                <rect key="frame" x="0.0" y="202.5" width="343" height="42.5"/>
+                                                <rect key="frame" x="0.0" y="199.5" width="343" height="42"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Terrible"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <state key="normal" title="Terrible">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="pressMood:" destination="Sev-cb-bGB" eventType="touchUpInside" id="Nq5-3h-yYV"/>
                                                 </connections>
@@ -166,16 +181,16 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKn-4F-KlQ">
-                                        <rect key="frame" x="0.0" y="281.5" width="343" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="281.5" width="343" height="24"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Lv4-f7-oVK">
-                                        <rect key="frame" x="0.0" y="310" width="343" height="245"/>
+                                        <rect key="frame" x="0.0" y="313.5" width="343" height="241.5"/>
                                         <subviews>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="YuG-89-NOb">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="245"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="241.5"/>
                                                 <date key="date" timeIntervalSinceReferenceDate="555532213.82774103">
                                                     <!--2018-08-09 18:30:13 +0000-->
                                                 </date>
@@ -248,6 +263,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1km-zX-HeI"/>
+        <segue reference="aJD-bm-b17"/>
     </inferredMetricsTieBreakers>
 </document>
