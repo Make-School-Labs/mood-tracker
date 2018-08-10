@@ -93,11 +93,27 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            moodService.deleteEntry(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+        default:
+            break
+        }
+    }
 }
 
 extension ViewController: MoodDetailedViewControllerDelegate {
     func moodDetailed(_ moodDetailed: MoodDetailedViewController, didUpdateMoodEntryWith mood: MoodEntry.Mood, date: Date) {
+        guard let selectedIndexPath = tableView.indexPathForSelectedRow else {
+            return
+        }
         
+        moodService.updateEntry(mood: mood, date: date, at: selectedIndexPath.row)
+        tableView.reloadData()
     }
     
     func moodDetailed(_ moodDetailed: MoodDetailedViewController, didCreateNewMoodEntryWith mood: MoodEntry.Mood, date: Date) {

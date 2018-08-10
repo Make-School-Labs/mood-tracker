@@ -9,7 +9,7 @@
 import Foundation
 import UIKit.UIColor
 
-struct MoodEntry {
+class MoodEntry: NSObject, NSCoding {
     
     //NOTE: should this be nested in MoodEntry?
     enum Mood: Int {
@@ -59,4 +59,30 @@ struct MoodEntry {
     
     var mood: Mood
     var date: Date
+    
+    init(mood newMood: Mood, date newDate: Date) {
+        mood = newMood
+        date = newDate
+        
+        super.init()   
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(mood.rawValue, forKey: "mood")
+        aCoder.encode(date.timeIntervalSince1970, forKey: "date")
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        let moodValue = aDecoder.decodeInteger(forKey: "mood")
+        guard let mood = Mood(rawValue: moodValue) else {
+            return nil
+        }
+        self.mood = mood
+        
+        let dateValue = aDecoder.decodeDouble(forKey: "date")
+        let date = Date(timeIntervalSince1970: dateValue)
+        self.date = date
+        
+        super.init()
+    }
 }

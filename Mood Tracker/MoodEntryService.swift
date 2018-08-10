@@ -36,8 +36,12 @@ struct MoodEntryService {
         }
     }
     
-    mutating func update(entry: MoodEntry, at index: Int) {
-        entries[index] = entry
+    mutating func updateEntry(mood newMood: MoodEntry.Mood, date newDate: Date, at index: Int) {
+        let entryToUpdate = entries[index]
+        entryToUpdate.mood = newMood
+        entryToUpdate.date = newDate
+        
+        entries[index] = entryToUpdate
         sortEntries()
         save()
     }
