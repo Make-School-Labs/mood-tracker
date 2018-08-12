@@ -47,6 +47,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E95FFE35211E9CAC00A9F780 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E989CF76211CB7580061C2C6 /* Assets.xcassets */,
+				E989CF78211CB7580061C2C6 /* LaunchScreen.storyboard */,
+				E989CF7B211CB7580061C2C6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E95FFE36211E9CB900A9F780 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E989CF89211CC7FA0061C2C6 /* Constants.swift */,
+				E989CF8B211CCED60061C2C6 /* Date+String.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		E95FFE37211E9CC700A9F780 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E989CF85211CC4080061C2C6 /* MoodEntry.swift */,
+				E989CF87211CC5920061C2C6 /* MoodEntryService.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E95FFE38211E9CCF00A9F780 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E989CF81211CBA650061C2C6 /* MoodTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		E989CF63211CB7520061C2C6 = {
 			isa = PBXGroup;
 			children = (
@@ -67,19 +103,23 @@
 			isa = PBXGroup;
 			children = (
 				E989CF6F211CB7530061C2C6 /* AppDelegate.swift */,
-				E989CF71211CB7530061C2C6 /* ViewController.swift */,
-				E989CF73211CB7530061C2C6 /* Main.storyboard */,
-				E989CF76211CB7580061C2C6 /* Assets.xcassets */,
-				E989CF78211CB7580061C2C6 /* LaunchScreen.storyboard */,
-				E989CF7B211CB7580061C2C6 /* Info.plist */,
-				E989CF81211CBA650061C2C6 /* MoodTableViewCell.swift */,
-				E989CF83211CC19C0061C2C6 /* MoodDetailedViewController.swift */,
-				E989CF85211CC4080061C2C6 /* MoodEntry.swift */,
-				E989CF87211CC5920061C2C6 /* MoodEntryService.swift */,
-				E989CF89211CC7FA0061C2C6 /* Constants.swift */,
-				E989CF8B211CCED60061C2C6 /* Date+String.swift */,
+				E95FFE37211E9CC700A9F780 /* Models */,
+				E9D3E202211E92ED00BF1323 /* View Controllers */,
+				E95FFE38211E9CCF00A9F780 /* Views */,
+				E95FFE36211E9CB900A9F780 /* Extensions */,
+				E95FFE35211E9CAC00A9F780 /* Supporting Files */,
 			);
 			path = "Mood Tracker";
+			sourceTree = "<group>";
+		};
+		E9D3E202211E92ED00BF1323 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E989CF71211CB7530061C2C6 /* ViewController.swift */,
+				E989CF83211CC19C0061C2C6 /* MoodDetailedViewController.swift */,
+				E989CF73211CB7530061C2C6 /* Main.storyboard */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

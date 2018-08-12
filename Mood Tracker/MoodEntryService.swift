@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct MoodEntryService {
+class MoodEntryService {
     
     private(set) var entries: [MoodEntry] = []
     
-    mutating func createEntry(mood: MoodEntry.Mood, date: Date) {
+    func createEntry(mood: MoodEntry.Mood, date: Date) {
         let newEntry = MoodEntry(mood: mood, date: date)
         
         entries.insert(newEntry, at: 0)
@@ -20,7 +20,7 @@ struct MoodEntryService {
         save()
     }
     
-    mutating func loadEntries() {
+    func loadEntries() {
         let ud = UserDefaults.standard
         
         //check if entries are saved from perviously
@@ -36,7 +36,7 @@ struct MoodEntryService {
         }
     }
     
-    mutating func updateEntry(mood newMood: MoodEntry.Mood, date newDate: Date, at index: Int) {
+    func updateEntry(mood newMood: MoodEntry.Mood, date newDate: Date, at index: Int) {
         let entryToUpdate = entries[index]
         entryToUpdate.mood = newMood
         entryToUpdate.date = newDate
@@ -46,12 +46,12 @@ struct MoodEntryService {
         save()
     }
     
-    mutating func deleteEntry(at index: Int) {
+    func deleteEntry(at index: Int) {
         entries.remove(at: index)
         save()
     }
     
-    private mutating func sortEntries() {
+    private func sortEntries() {
         entries.sort { (aEntry, bEntry) -> Bool in
             return aEntry.date.compare(bEntry.date) == .orderedDescending
         }
