@@ -63,9 +63,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBAction func pressAddEntry(_ button: UIBarButtonItem) {
-//
-//        let today = Date()
-//        moodService.createEntry(mood: .none, date: today)
+
+        let today = Date()
+        moodService.createEntry(mood: .none, date: today)
+        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
     }
     
     // MARK: - LIFE CYCLE (REMOVE THIS COMMENT BEFORE PUBLISHING)
@@ -92,12 +93,10 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "mood cell", for: indexPath) as! MoodTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mood entry cell", for: indexPath) as! MoodEntryTableViewCell
         
         let entry = moodService.entries[indexPath.row]
-        cell.imageViewMoodColor.backgroundColor = entry.mood.colorValue
-        cell.labelMoodTitle.text = entry.mood.stringValue
-        cell.labelMoodDate.text = entry.date.stringValue
+        cell.configure(entry)
         
         return cell
     }
