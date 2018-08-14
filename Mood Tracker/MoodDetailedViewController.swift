@@ -77,12 +77,27 @@ class MoodDetailedViewController: UIViewController {
     @IBOutlet weak var buttonBadMood: UIButton!
     @IBOutlet weak var buttonTerribleMood: UIButton!
     @IBAction func pressMood(_ button: UIButton) {
-        
+        switch button.tag {
+        case 0:
+            updateMood(to: .amazing)
+        case 1:
+            updateMood(to: .good)
+        case 2:
+            updateMood(to: .neutral)
+        case 3:
+            updateMood(to: .bad)
+        case 4:
+            updateMood(to: .terrible)
+        default:
+            
+            //NOTE: error handling
+            print("unhandled button tag")
+        }
     }
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBAction func datePickerDidChangeValue(_ sender: UIDatePicker) {
-        
+        date = datePicker.date
     }
     
     override func viewDidLoad() {
