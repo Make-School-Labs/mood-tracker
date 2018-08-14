@@ -12,7 +12,37 @@ class ViewController: UIViewController {
     
     var entries: [MoodEntry] = []
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "show entry details":
+                guard
+                    let selectedCell = sender as? UITableViewCell,
+                    let indexPath = tableView.indexPath(for: selectedCell) else {
+                        return print("failed to locate index path from sender")
+                }
+                
+                guard let entryDetailsViewController = segue.destination as? MoodDetailedViewController else {
+                    return print("storyboard not set up correctly, 'show entry details' segue needs to segue to a 'MoodDetailedViewController'")
+                }
+                
+                let entry = entries[indexPath.row]
+                entryDetailsViewController.mood = entry.mood
+                entryDetailsViewController.date = entry.date
+                
+            default: break
+            }
+        }
+    }
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBAction func pressAddEntry(_ button: UIBarButtonItem) {
+        let now = Date()
+        let newMood = MoodEntry(mood: .amazing, date: now)
+        entries.insert(newMood, at: 0)
+        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +53,6 @@ class ViewController: UIViewController {
         
         entries = [goodEntry, badEntry, neutralEntry]
         tableView.reloadData()
-    }
-    
-    @IBAction func pressAddEntry(_ button: UIBarButtonItem) {
-        let now = Date()
-        let newMood = MoodEntry(mood: .amazing, date: now)
-        entries.insert(newMood, at: 0)
-        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
     }
 }
 

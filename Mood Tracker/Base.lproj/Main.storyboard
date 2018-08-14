@@ -68,6 +68,7 @@
                                             <outlet property="imageViewMoodColor" destination="K9d-He-ibW" id="PpJ-V2-bB7"/>
                                             <outlet property="labelMoodDate" destination="H8d-Wl-vVE" id="06O-bq-a3u"/>
                                             <outlet property="labelMoodTitle" destination="88d-fM-g4R" id="ZX8-QU-Moi"/>
+                                            <segue destination="aja-8Z-If9" kind="show" identifier="show entry details" id="h4z-4m-Pch"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -100,6 +101,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1056.8" y="112.89355322338831"/>
+        </scene>
+        <!--Mood Detailed View Controller-->
+        <scene sceneID="u2J-y4-KJT">
+            <objects>
+                <viewController id="aja-8Z-If9" customClass="MoodDetailedViewController" customModule="Mood_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rz4-Jx-EqM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="E55-s7-d7a"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HE8-hq-SIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1868" y="113"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hZ4-t8-8xi">

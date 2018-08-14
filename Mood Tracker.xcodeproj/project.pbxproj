@@ -14,6 +14,7 @@
 		E989CF7A211CB7580061C2C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E989CF78211CB7580061C2C6 /* LaunchScreen.storyboard */; };
 		E995C6D3212363F00022E409 /* MoodEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995C6D2212363F00022E409 /* MoodEntry.swift */; };
 		E995C6D5212367870022E409 /* MoodEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995C6D4212367870022E409 /* MoodEntryTableViewCell.swift */; };
+		E995C6D721236B520022E409 /* MoodDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995C6D621236B520022E409 /* MoodDetailedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E989CF7B211CB7580061C2C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E995C6D2212363F00022E409 /* MoodEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntry.swift; sourceTree = "<group>"; };
 		E995C6D4212367870022E409 /* MoodEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntryTableViewCell.swift; sourceTree = "<group>"; };
+		E995C6D621236B520022E409 /* MoodDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodDetailedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				E989CF6F211CB7530061C2C6 /* AppDelegate.swift */,
 				E989CF71211CB7530061C2C6 /* ViewController.swift */,
+				E995C6D621236B520022E409 /* MoodDetailedViewController.swift */,
 				E995C6D4212367870022E409 /* MoodEntryTableViewCell.swift */,
 				E989CF73211CB7530061C2C6 /* Main.storyboard */,
 				E995C6D2212363F00022E409 /* MoodEntry.swift */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E989CF72211CB7530061C2C6 /* ViewController.swift in Sources */,
+				E995C6D721236B520022E409 /* MoodDetailedViewController.swift in Sources */,
 				E989CF70211CB7530061C2C6 /* AppDelegate.swift in Sources */,
 				E995C6D3212363F00022E409 /* MoodEntry.swift in Sources */,
 				E995C6D5212367870022E409 /* MoodEntryTableViewCell.swift in Sources */,
