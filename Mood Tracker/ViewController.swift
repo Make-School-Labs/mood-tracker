@@ -15,6 +15,16 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             switch identifier {
+            case "show new entry":
+                guard let entryDetailsViewController = segue.destination as? MoodDetailedViewController else {
+                    
+                    //NOTE: error handling
+                    return print("storyboard not set up correctly, 'show entry details' segue needs to segue to a 'MoodDetailedViewController'")
+                }
+                
+                entryDetailsViewController.mood = MoodEntry.Mood.none
+                entryDetailsViewController.date = Date()
+                
             case "show entry details":
                 guard
                     let selectedCell = sender as? UITableViewCell,
@@ -29,6 +39,7 @@ class ViewController: UIViewController {
                 let entry = entries[indexPath.row]
                 entryDetailsViewController.mood = entry.mood
                 entryDetailsViewController.date = entry.date
+                entryDetailsViewController.isEditingEntry = true
                 
             default: break
             }
@@ -36,13 +47,6 @@ class ViewController: UIViewController {
     }
     
     @IBOutlet weak var tableView: UITableView!
-    
-    @IBAction func pressAddEntry(_ button: UIBarButtonItem) {
-        let now = Date()
-        let newMood = MoodEntry(mood: .amazing, date: now)
-        entries.insert(newMood, at: 0)
-        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
