@@ -128,6 +128,9 @@
                                                 <state key="normal" title="Amazing">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="pressMood:" destination="aja-8Z-If9" eventType="touchUpInside" id="u1s-B8-2jF"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeQ-k6-FJC">
                                                 <rect key="frame" x="0.0" y="41.5" width="288" height="33.5"/>
@@ -135,6 +138,9 @@
                                                 <state key="normal" title="Good">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="pressMood:" destination="aja-8Z-If9" eventType="touchUpInside" id="vAL-Jg-eHA"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckv-Yt-qZJ">
                                                 <rect key="frame" x="0.0" y="83" width="288" height="34"/>
@@ -142,6 +148,9 @@
                                                 <state key="normal" title="Neutral">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="pressMood:" destination="aja-8Z-If9" eventType="touchUpInside" id="rs9-0T-Ola"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51X-Sa-9v4">
                                                 <rect key="frame" x="0.0" y="125" width="288" height="33.5"/>
@@ -149,6 +158,9 @@
                                                 <state key="normal" title="Bad">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="pressMood:" destination="aja-8Z-If9" eventType="touchUpInside" id="AUa-Fg-A4h"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7GT-4H-rXf">
                                                 <rect key="frame" x="0.0" y="166.5" width="288" height="33.5"/>
@@ -156,6 +168,9 @@
                                                 <state key="normal" title="Terrible">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="pressMood:" destination="aja-8Z-If9" eventType="touchUpInside" id="jI1-kj-L6t"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -170,6 +185,9 @@
                                         <date key="date" timeIntervalSinceReferenceDate="555969999.44948304">
                                             <!--2018-08-14 20:06:39 +0000-->
                                         </date>
+                                        <connections>
+                                            <action selector="datePickerDidChangeValue:" destination="aja-8Z-If9" eventType="valueChanged" id="rJT-jo-uJv"/>
+                                        </connections>
                                     </datePicker>
                                 </subviews>
                                 <constraints>
@@ -187,9 +205,25 @@
                         <viewLayoutGuide key="safeArea" id="E55-s7-d7a"/>
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="Imt-ZQ-MFs">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="oF6-HF-sMA"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="b2l-d5-1vw"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="oF6-HF-sMA">
+                            <connections>
+                                <action selector="pressCancel:" destination="aja-8Z-If9" id="A8w-rp-4cS"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="b2l-d5-1vw">
+                            <connections>
+                                <action selector="pressSave:" destination="aja-8Z-If9" id="Lyj-D4-v6y"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="buttonAmazingMood" destination="nN5-ME-HdV" id="fLw-aP-Cnr"/>
+                        <outlet property="buttonBadMood" destination="51X-Sa-9v4" id="5qf-uh-mS6"/>
+                        <outlet property="buttonGoodMood" destination="zeQ-k6-FJC" id="Fc6-KC-4mL"/>
+                        <outlet property="buttonNeutralMood" destination="ckv-Yt-qZJ" id="eYz-P0-kWz"/>
+                        <outlet property="buttonTerribleMood" destination="7GT-4H-rXf" id="Cah-1t-9xR"/>
+                        <outlet property="datePicker" destination="JQB-NR-tNr" id="SNW-mf-g62"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HE8-hq-SIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
