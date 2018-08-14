@@ -11,7 +11,19 @@ import UIKit
 class ViewController: UIViewController {
     
     var entries: [MoodEntry] = []
-
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let goodEntry = MoodEntry(mood: .good, date: Date())
+        let badEntry = MoodEntry(mood: .bad, date: Date())
+        let neutralEntry = MoodEntry(mood: .neutral, date: Date())
+        
+        entries = [goodEntry, badEntry, neutralEntry]
+        tableView.reloadData()
+    }
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
