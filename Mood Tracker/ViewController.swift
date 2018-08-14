@@ -49,5 +49,10 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedEntry = entries[indexPath.row]
+        print("Selected mood was \(selectedEntry.mood.stringValue)")
+    }
 }
 
