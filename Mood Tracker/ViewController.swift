@@ -12,6 +12,23 @@ class ViewController: UIViewController {
     
     var entries: [MoodEntry] = []
     
+    func createEntry(mood: MoodEntry.Mood, date: Date) {
+        let newEntry = MoodEntry(mood: mood, date: date)
+        entries.insert(newEntry, at: 0)
+        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+    }
+    
+    func updateEntry(mood: MoodEntry.Mood, date: Date, at index: Int) {
+        entries[index].mood = mood
+        entries[index].date = date
+        tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+    }
+    
+    func deleteEntry(at index: Int) {
+        entries.remove(at: index)
+        tableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             switch identifier {
@@ -68,10 +85,16 @@ class ViewController: UIViewController {
         
         switch identifier {
         case "unwind from save":
+            let newMood: MoodEntry.Mood = detailedEntryViewController.mood
+            let newDate: Date = detailedEntryViewController.date
             if detailedEntryViewController.isEditingEntry {
-                print("from save button and editing an existing entry")
+                guard let selectedIndexPath = tableView.indexPathForSelectedRow else {
+                    return
+                }
+                
+                updateEntry(mood: newMood, date: newDate, at: selectedIndexPath.row)
             } else {
-                print("from save button and adding a new entry")
+                createEntry(mood: newMood, date: newDate)
             }
         case "unwind from cancel":
             print("from cancel button")
@@ -90,6 +113,14 @@ class ViewController: UIViewController {
         entries = [goodEntry, badEntry, neutralEntry]
         tableView.reloadData()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let selectedIndexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: selectedIndexPath, animated: true)
+        }
+    }
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -102,9 +133,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mood entry cell", for: indexPath) as! MoodEntryTableViewCell
         
         let entry = entries[indexPath.row]
-        cell.labelMoodTitle.text = entry.mood.stringValue
-        cell.imageViewMoodColor.backgroundColor = entry.mood.colorValue
-        cell.labelMoodDate.text = String(describing: entry.date)
+        cell.configure(entry)
         
         return cell
     }
@@ -112,6 +141,15 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedEntry = entries[indexPath.row]
         print("Selected mood was \(selectedEntry.mood.stringValue)")
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            deleteEntry(at: indexPath.row)
+        default:
+            break
+        }
     }
 }
 
