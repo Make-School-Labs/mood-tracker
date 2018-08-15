@@ -48,6 +48,15 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBAction func pressCalendar(_ sender: UIBarButtonItem) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let calendarVc = mainStoryboard.instantiateViewController(withIdentifier: "calendar vc") as? CalendarViewController else {
+            return print("storyboard not set up correctly, check the identity of \"calendar vc\"")
+        }
+        
+        present(calendarVc, animated: true, completion: nil)
+    }
+    
     @IBAction func unwindToHome(_ segue: UIStoryboardSegue) {
         guard let identifier = segue.identifier else {
             return

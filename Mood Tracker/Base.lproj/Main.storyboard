@@ -88,6 +88,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Uzn-c3-WnL">
+                        <barButtonItem key="leftBarButtonItem" title="Calendar" id="KEe-wG-JAp">
+                            <connections>
+                                <action selector="pressCalendar:" destination="BYZ-38-t0r" id="eA3-cE-r54"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fSs-xq-cMG">
                             <connections>
                                 <segue destination="aja-8Z-If9" kind="show" identifier="show new entry" id="X7r-Rg-jMC"/>
@@ -230,6 +235,34 @@
                 <exit id="9tp-f4-fqy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1868" y="113"/>
+        </scene>
+        <!--Calendar View Controller-->
+        <scene sceneID="hOs-Ak-5H5">
+            <objects>
+                <viewController storyboardIdentifier="calendar vc" id="FF4-Qb-vVv" customClass="CalendarViewController" customModule="Mood_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0xP-Zd-WUd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nz9-94-onB">
+                                <rect key="frame" x="142" y="269" width="37" height="30"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="pressDone:" destination="FF4-Qb-vVv" eventType="touchUpInside" id="erQ-4o-lXH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Nz9-94-onB" firstAttribute="centerX" secondItem="0xP-Zd-WUd" secondAttribute="centerX" id="4q6-8g-8z9"/>
+                            <constraint firstItem="Nz9-94-onB" firstAttribute="centerY" secondItem="0xP-Zd-WUd" secondAttribute="centerY" id="cOP-cj-5ee"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mTe-hR-Fzb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fkx-EJ-b7J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2657" y="112"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hZ4-t8-8xi">
