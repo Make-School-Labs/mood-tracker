@@ -10,11 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var moodService = MoodEntryService()
+    var entries: [MoodEntry] = []
     
-    // MARK: - RETURN VALUES (REMOVE THIS COMMENT BEFORE PUBLISHING)
+    func createEntry(mood: MoodEntry.Mood, date: Date) {
+        let newEntry = MoodEntry(mood: mood, date: date)
+        entries.insert(newEntry, at: 0)
+        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+    }
     
-    // MARK: - VOID METHODS (REMOVE THIS COMMENT BEFORE PUBLISHING)
+    func updateEntry(mood: MoodEntry.Mood, date: Date, at index: Int) {
+        entries[index].mood = mood
+        entries[index].date = date
+        tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+    }
+    
+    func deleteEntry(at index: Int) {
+        entries.remove(at: index)
+        tableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
@@ -26,62 +39,86 @@ class ViewController: UIViewController {
                     return print("storyboard not set up correctly, 'show entry details' segue needs to segue to a 'MoodDetailedViewController'")
                 }
                 
-                entryDetailsViewController.delegate = self
+                entryDetailsViewController.mood = MoodEntry.Mood.none
+                entryDetailsViewController.date = Date()
                 
             case "show entry details":
                 guard
                     let selectedCell = sender as? UITableViewCell,
                     let indexPath = tableView.indexPath(for: selectedCell) else {
-                        
-                        //NOTE: error handling
                         return print("failed to locate index path from sender")
                 }
                 
                 guard let entryDetailsViewController = segue.destination as? MoodDetailedViewController else {
-                    
-                    //NOTE: error handling
                     return print("storyboard not set up correctly, 'show entry details' segue needs to segue to a 'MoodDetailedViewController'")
                 }
                 
-                let entry = moodService.entries[indexPath.row]
+                let entry = entries[indexPath.row]
                 entryDetailsViewController.mood = entry.mood
                 entryDetailsViewController.date = entry.date
                 entryDetailsViewController.isEditingEntry = true
-                
-                entryDetailsViewController.delegate = self
                 
             default: break
             }
         }
     }
     
-    // MARK: - IBACTIONS (REMOVE THIS COMMENT BEFORE PUBLISHING)
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBAction func pressCalendar(_ sender: UIBarButtonItem) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let calendarVc = mainStoryboard.instantiateViewController(withIdentifier: "calendar vc") as? CalendarViewController else {
+            return print("storyboard not set up correctly, check the identity of \"calendar vc\"")
+        }
+        
+        present(calendarVc, animated: true, completion: nil)
+    }
     
     @IBAction func unwindToHome(_ segue: UIStoryboardSegue) {
+        guard let identifier = segue.identifier else {
+            return
+        }
         
+        guard let detailedEntryViewController = segue.source as? MoodDetailedViewController else {
+            return print("storyboard unwind segue not set up correctly")
+        }
+        
+        switch identifier {
+        case "unwind from save":
+            let newMood: MoodEntry.Mood = detailedEntryViewController.mood
+            let newDate: Date = detailedEntryViewController.date
+            if detailedEntryViewController.isEditingEntry {
+                guard let selectedIndexPath = tableView.indexPathForSelectedRow else {
+                    return
+                }
+                
+                updateEntry(mood: newMood, date: newDate, at: selectedIndexPath.row)
+            } else {
+                createEntry(mood: newMood, date: newDate)
+            }
+        case "unwind from cancel":
+            print("from cancel button")
+        default:
+            break
+        }
     }
     
-    @IBOutlet weak var tableView: UITableView!
-    @IBAction func pressAddEntry(_ button: UIBarButtonItem) {
-
-        let today = Date()
-        moodService.createEntry(mood: .none, date: today)
-        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
-    }
-    
-    // MARK: - LIFE CYCLE (REMOVE THIS COMMENT BEFORE PUBLISHING)
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        moodService.loadEntries()
+        let goodEntry = MoodEntry(mood: .good, date: Date())
+        let badEntry = MoodEntry(mood: .bad, date: Date())
+        let neutralEntry = MoodEntry(mood: .neutral, date: Date())
+        
+        entries = [goodEntry, badEntry, neutralEntry]
+        tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let previouslySelectedRow = tableView.indexPathForSelectedRow {
-            tableView.deselectRow(at: previouslySelectedRow, animated: true)
+        if let selectedIndexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: selectedIndexPath, animated: true)
         }
     }
 }
@@ -89,42 +126,30 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return moodService.entries.count
+        return entries.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mood entry cell", for: indexPath) as! MoodEntryTableViewCell
         
-        let entry = moodService.entries[indexPath.row]
+        let entry = entries[indexPath.row]
         cell.configure(entry)
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedEntry = entries[indexPath.row]
+        print("Selected mood was \(selectedEntry.mood.stringValue)")
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
-            moodService.deleteEntry(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-            
+            deleteEntry(at: indexPath.row)
         default:
             break
         }
     }
 }
 
-extension ViewController: MoodDetailedViewControllerDelegate {
-    func moodDetailed(_ moodDetailed: MoodDetailedViewController, didUpdateMoodEntryWith mood: MoodEntry.Mood, date: Date) {
-        guard let selectedIndexPath = tableView.indexPathForSelectedRow else {
-            return
-        }
-        
-        moodService.updateEntry(mood: mood, date: date, at: selectedIndexPath.row)
-        tableView.reloadData()
-    }
-    
-    func moodDetailed(_ moodDetailed: MoodDetailedViewController, didCreateNewMoodEntryWith mood: MoodEntry.Mood, date: Date) {
-        moodService.createEntry(mood: mood, date: date)
-        tableView.reloadData()
-    }
-}

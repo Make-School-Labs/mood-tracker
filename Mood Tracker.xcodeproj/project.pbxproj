@@ -12,12 +12,11 @@
 		E989CF75211CB7530061C2C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E989CF73211CB7530061C2C6 /* Main.storyboard */; };
 		E989CF77211CB7580061C2C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E989CF76211CB7580061C2C6 /* Assets.xcassets */; };
 		E989CF7A211CB7580061C2C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E989CF78211CB7580061C2C6 /* LaunchScreen.storyboard */; };
-		E989CF82211CBA650061C2C6 /* MoodEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E989CF81211CBA650061C2C6 /* MoodEntryTableViewCell.swift */; };
-		E989CF84211CC19C0061C2C6 /* MoodDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E989CF83211CC19C0061C2C6 /* MoodDetailedViewController.swift */; };
-		E989CF86211CC4080061C2C6 /* MoodEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E989CF85211CC4080061C2C6 /* MoodEntry.swift */; };
-		E989CF88211CC5920061C2C6 /* MoodEntryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E989CF87211CC5920061C2C6 /* MoodEntryService.swift */; };
-		E989CF8A211CC7FA0061C2C6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E989CF89211CC7FA0061C2C6 /* Constants.swift */; };
-		E989CF8C211CCED60061C2C6 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E989CF8B211CCED60061C2C6 /* Date+String.swift */; };
+		E995C6D3212363F00022E409 /* MoodEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995C6D2212363F00022E409 /* MoodEntry.swift */; };
+		E995C6D5212367870022E409 /* MoodEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995C6D4212367870022E409 /* MoodEntryTableViewCell.swift */; };
+		E995C6D721236B520022E409 /* MoodDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995C6D621236B520022E409 /* MoodDetailedViewController.swift */; };
+		E995C6D92123E1DC0022E409 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995C6D82123E1DC0022E409 /* CalendarViewController.swift */; };
+		E995C6DB2123EBF60022E409 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995C6DA2123EBF60022E409 /* Date+String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,12 +27,11 @@
 		E989CF76211CB7580061C2C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E989CF79211CB7580061C2C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E989CF7B211CB7580061C2C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E989CF81211CBA650061C2C6 /* MoodEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntryTableViewCell.swift; sourceTree = "<group>"; };
-		E989CF83211CC19C0061C2C6 /* MoodDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodDetailedViewController.swift; sourceTree = "<group>"; };
-		E989CF85211CC4080061C2C6 /* MoodEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntry.swift; sourceTree = "<group>"; };
-		E989CF87211CC5920061C2C6 /* MoodEntryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntryService.swift; sourceTree = "<group>"; };
-		E989CF89211CC7FA0061C2C6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		E989CF8B211CCED60061C2C6 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
+		E995C6D2212363F00022E409 /* MoodEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntry.swift; sourceTree = "<group>"; };
+		E995C6D4212367870022E409 /* MoodEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntryTableViewCell.swift; sourceTree = "<group>"; };
+		E995C6D621236B520022E409 /* MoodDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodDetailedViewController.swift; sourceTree = "<group>"; };
+		E995C6D82123E1DC0022E409 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		E995C6DA2123EBF60022E409 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,42 +45,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E95FFE35211E9CAC00A9F780 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				E989CF76211CB7580061C2C6 /* Assets.xcassets */,
-				E989CF78211CB7580061C2C6 /* LaunchScreen.storyboard */,
-				E989CF7B211CB7580061C2C6 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E95FFE36211E9CB900A9F780 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				E989CF89211CC7FA0061C2C6 /* Constants.swift */,
-				E989CF8B211CCED60061C2C6 /* Date+String.swift */,
-			);
-			name = Extensions;
-			sourceTree = "<group>";
-		};
-		E95FFE37211E9CC700A9F780 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				E989CF85211CC4080061C2C6 /* MoodEntry.swift */,
-				E989CF87211CC5920061C2C6 /* MoodEntryService.swift */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
-		E95FFE38211E9CCF00A9F780 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				E989CF81211CBA650061C2C6 /* MoodEntryTableViewCell.swift */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
 		E989CF63211CB7520061C2C6 = {
 			isa = PBXGroup;
 			children = (
@@ -103,23 +65,58 @@
 			isa = PBXGroup;
 			children = (
 				E989CF6F211CB7530061C2C6 /* AppDelegate.swift */,
-				E95FFE37211E9CC700A9F780 /* Models */,
-				E9D3E202211E92ED00BF1323 /* View Controllers */,
-				E95FFE38211E9CCF00A9F780 /* Views */,
-				E95FFE36211E9CB900A9F780 /* Extensions */,
-				E95FFE35211E9CAC00A9F780 /* Supporting Files */,
+				E995C6DC2124A88B0022E409 /* Models */,
+				E995C6DD2124A8930022E409 /* Extensions */,
+				E995C6DE2124A89C0022E409 /* View Controllers */,
+				E989CF73211CB7530061C2C6 /* Main.storyboard */,
+				E995C6DF2124A8DC0022E409 /* Views */,
+				E995C6E02124A8E30022E409 /* Supporting Files */,
 			);
 			path = "Mood Tracker";
 			sourceTree = "<group>";
 		};
-		E9D3E202211E92ED00BF1323 /* View Controllers */ = {
+		E995C6DC2124A88B0022E409 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E995C6D2212363F00022E409 /* MoodEntry.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E995C6DD2124A8930022E409 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E995C6DA2123EBF60022E409 /* Date+String.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		E995C6DE2124A89C0022E409 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				E989CF71211CB7530061C2C6 /* ViewController.swift */,
-				E989CF83211CC19C0061C2C6 /* MoodDetailedViewController.swift */,
-				E989CF73211CB7530061C2C6 /* Main.storyboard */,
+				E995C6D621236B520022E409 /* MoodDetailedViewController.swift */,
+				E995C6D82123E1DC0022E409 /* CalendarViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E995C6DF2124A8DC0022E409 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E995C6D4212367870022E409 /* MoodEntryTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E995C6E02124A8E30022E409 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E989CF76211CB7580061C2C6 /* Assets.xcassets */,
+				E989CF78211CB7580061C2C6 /* LaunchScreen.storyboard */,
+				E989CF7B211CB7580061C2C6 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,14 +190,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E989CF82211CBA650061C2C6 /* MoodEntryTableViewCell.swift in Sources */,
-				E989CF88211CC5920061C2C6 /* MoodEntryService.swift in Sources */,
+				E995C6DB2123EBF60022E409 /* Date+String.swift in Sources */,
+				E995C6D92123E1DC0022E409 /* CalendarViewController.swift in Sources */,
 				E989CF72211CB7530061C2C6 /* ViewController.swift in Sources */,
-				E989CF86211CC4080061C2C6 /* MoodEntry.swift in Sources */,
-				E989CF8C211CCED60061C2C6 /* Date+String.swift in Sources */,
-				E989CF8A211CC7FA0061C2C6 /* Constants.swift in Sources */,
-				E989CF84211CC19C0061C2C6 /* MoodDetailedViewController.swift in Sources */,
+				E995C6D721236B520022E409 /* MoodDetailedViewController.swift in Sources */,
 				E989CF70211CB7530061C2C6 /* AppDelegate.swift in Sources */,
+				E995C6D3212363F00022E409 /* MoodEntry.swift in Sources */,
+				E995C6D5212367870022E409 /* MoodEntryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
