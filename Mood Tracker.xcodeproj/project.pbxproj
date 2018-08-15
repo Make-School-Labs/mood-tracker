@@ -65,18 +65,58 @@
 			isa = PBXGroup;
 			children = (
 				E989CF6F211CB7530061C2C6 /* AppDelegate.swift */,
-				E989CF71211CB7530061C2C6 /* ViewController.swift */,
-				E995C6D82123E1DC0022E409 /* CalendarViewController.swift */,
-				E995C6D621236B520022E409 /* MoodDetailedViewController.swift */,
-				E995C6D4212367870022E409 /* MoodEntryTableViewCell.swift */,
-				E995C6DA2123EBF60022E409 /* Date+String.swift */,
+				E995C6DC2124A88B0022E409 /* Models */,
+				E995C6DD2124A8930022E409 /* Extensions */,
+				E995C6DE2124A89C0022E409 /* View Controllers */,
 				E989CF73211CB7530061C2C6 /* Main.storyboard */,
+				E995C6DF2124A8DC0022E409 /* Views */,
+				E995C6E02124A8E30022E409 /* Supporting Files */,
+			);
+			path = "Mood Tracker";
+			sourceTree = "<group>";
+		};
+		E995C6DC2124A88B0022E409 /* Models */ = {
+			isa = PBXGroup;
+			children = (
 				E995C6D2212363F00022E409 /* MoodEntry.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E995C6DD2124A8930022E409 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E995C6DA2123EBF60022E409 /* Date+String.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		E995C6DE2124A89C0022E409 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E989CF71211CB7530061C2C6 /* ViewController.swift */,
+				E995C6D621236B520022E409 /* MoodDetailedViewController.swift */,
+				E995C6D82123E1DC0022E409 /* CalendarViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E995C6DF2124A8DC0022E409 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E995C6D4212367870022E409 /* MoodEntryTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E995C6E02124A8E30022E409 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				E989CF76211CB7580061C2C6 /* Assets.xcassets */,
 				E989CF78211CB7580061C2C6 /* LaunchScreen.storyboard */,
 				E989CF7B211CB7580061C2C6 /* Info.plist */,
 			);
-			path = "Mood Tracker";
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
