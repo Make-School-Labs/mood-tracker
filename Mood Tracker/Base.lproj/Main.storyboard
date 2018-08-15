@@ -207,7 +207,7 @@
                     <navigationItem key="navigationItem" title="Details" id="Imt-ZQ-MFs">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="oF6-HF-sMA">
                             <connections>
-                                <action selector="pressCancel:" destination="aja-8Z-If9" id="A8w-rp-4cS"/>
+                                <segue destination="9tp-f4-fqy" kind="unwind" identifier="unwind from cancel" unwindAction="unwindToHome:" id="xto-I8-NYh"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="b2l-d5-1vw">
@@ -223,9 +223,11 @@
                         <outlet property="buttonNeutralMood" destination="ckv-Yt-qZJ" id="eYz-P0-kWz"/>
                         <outlet property="buttonTerribleMood" destination="7GT-4H-rXf" id="Cah-1t-9xR"/>
                         <outlet property="datePicker" destination="JQB-NR-tNr" id="SNW-mf-g62"/>
+                        <segue destination="9tp-f4-fqy" kind="unwind" identifier="unwind from save" unwindAction="unwindToHome:" id="1Je-Nk-vYh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HE8-hq-SIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="9tp-f4-fqy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1868" y="113"/>
         </scene>

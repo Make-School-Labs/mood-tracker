@@ -64,11 +64,7 @@ class MoodDetailedViewController: UIViewController {
     }
     
     @IBAction func pressSave(_ sender: UIBarButtonItem) {
-        
-    }
-    
-    @IBAction func pressCancel(_ sender: UIBarButtonItem) {
-        
+        performSegue(withIdentifier: "unwind from save", sender: nil)
     }
     
     @IBOutlet weak var buttonAmazingMood: UIButton!
